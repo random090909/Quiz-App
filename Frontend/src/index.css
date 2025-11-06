@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* Global responsive improvements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@layer components {
+  .bullet-point {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  
+  /* Responsive bullet points for smaller screens */
+  @media (max-width: 640px) {
+    .bullet-point {
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  }
+  
+  /* Extra small screens (phones in portrait) */
+  @media (max-width: 475px) {
+    .bullet-point {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+  
+  /* Touch manipulation for better mobile interaction */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .bullet-blue {
+    background-color: rgb(59 130 246);
+  }
+  
+  .bullet-purple {
+    background-color: rgb(168 85 247);
+  }
+  
+  .bullet-pink {
+    background-color: rgb(236 72 153);
+  }
+  
+  .bullet-green {
+    background-color: rgb(34 197 94);
+  }
+  
+  .bullet-orange {
+    background-color: rgb(249 115 22);
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Ensure text gradient works on all browsers */
+  @supports not (-webkit-background-clip: text) {
+    .text-gradient {
+      color: #667eea;
+    }
+  }
+}
+
