@@ -4,6 +4,8 @@ import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import userRoutes from './routes/user.js'
 import progressRoutes from './routes/progress.js'
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express()
 
@@ -28,6 +30,24 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/users', userRoutes)
 app.use('/api/progress', progressRoutes)
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const _dirname1 = path.resolve(__dirname, '..')
+
+if(process.env.NODE_ENV=='production'){
+    app.use(express.static(path.join(_dirname1, "Frontend", "dist")));
+
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(_dirname1,"Frontend","dist","index.html"));
+    });
+}
+else{
+    app.get("/",(req,res)=>{
+        res.send("Success");
+    })
+}
 
 mongoose.connect(process.env.MONGO_URI,{dbName:"QuizProject"})  
     .then(() => {
