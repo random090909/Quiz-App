@@ -15,17 +15,28 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 // CORS middleware
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://quiz-app-hzwp.onrender.com"
+];
+
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173')
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-  res.header('Access-Control-Allow-Credentials', 'true')
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200)
-  } else {
-    next()
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
   }
-})
+
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
 
 // Routes
 app.use('/api/users', userRoutes)
