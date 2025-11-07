@@ -108,7 +108,7 @@ const savePretest = async(req, res) => {
             16: 'Peripheral circulation',
             17: '20 ml/hr',
             18: 'Begin chest physiotherapy',
-            19: 'Option B',
+            19: 'Option A',
             20: 'Femoral artery - largest diameter and easiest access'
         }
 
