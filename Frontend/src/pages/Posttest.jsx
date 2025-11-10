@@ -19,25 +19,25 @@ const Posttest = () => {
   // 20 questions for posttest (IABP knowledge questions - same as pretest)
   const questions = [
     { id: 1, text: 'What is the full form of IABP', options: ['Intra-Aortic Balloon Pump', 'Intra-Arterial Blood Pressure', 'Internal Aortic Balloon Pressure', 'Inter-atric Balloon Pump'] },
-    { id: 2, text: 'What is the main purpose of using the IABP machine?', options: ['To increase cardiac output and coronary perfusion', 'To measure arterial pressure only', 'To replace the function of the heart', 'To monitor pulmonary artery pressure'] },
+    { id: 2, text: 'Why is the IABP machine used even when other alternatives such as PCI are available?', options: ['To provide temporary mechanical support in cardiogenic shock', 'To replace PCI completely', 'To prevent all arrhythmias', 'To cure coronary artery disease permanently'] },
     { id: 3, text: 'Which material is commonly used in the manufacturing of the IABP balloon?', options: ['Rubber', 'Polyurethane', 'Glass fiber', 'Plastic'] },
     { id: 4, text: 'How many primary lumens/ports are present in an IABP catheter?', options: ['One', 'Two', 'Three', 'Four'] },
     { id: 5, text: 'The correct positioning of the IABP tip is?', options: ['In the left ventricle', '2–3 cm below the aortic valve', 'At the level of the renal arteries', 'In the descending thoracic aorta, below the left subclavian artery'] },
     { id: 6, text: 'What gas is typically used to inflate the IABP balloon?', options: ['Nitrogen', 'Oxygen', 'Helium', 'Carbon dioxide'] },
     { id: 7, text: 'What is the most common access site for IABP insertion?', options: ['Brachial artery', 'Radial artery', 'Femoral artery', 'Carotid artery'] },
-    { id: 8, text: 'How many sub-modes of IABP are commonly used in clinical practice?', options: ['One', 'Two', 'Three', 'Four'] },
-    { id: 9, text: 'When does the IABP balloon inflate during the cardiac cycle?', options: ['During systole', 'At the beginning of ventricular contraction', 'Immediately after the R-wave', 'At the onset of diastole'] },
-    { id: 10, text: 'In an IABP waveform, diastolic augmentation appears after the R wave on ECG. What is the likely cause?', options: ['Early balloon deflation', 'Late balloon inflation', 'Proper synchronization', 'Catheter kinking'] },
-    { id: 11, text: 'Why is the IABP machine used even when other alternatives such as PCI are available?', options: ['To provide temporary mechanical support in cardiogenic shock', 'To replace PCI completely', 'To prevent all arrhythmias', 'To cure coronary artery disease permanently'] },
-    { id: 12, text: 'Which of the following is a contraindication for the use of an intra-aortic balloon pump (IABP)?', options: ['Cardiogenic shock', 'Acute myocardial infarction', 'Cardiac tamponade', 'Aortic dissection'] },
-    { id: 13, text: 'What is the most common indication of IABP machine:', options: ['Early Balloon Deflation', 'Cardiogenic shock', 'Proper synchronization', 'Catheter Kinking'] },
-    { id: 14, text: 'Which of the following is a potential complication of IABP therapy?', options: ['Hyperkalemia', 'Hemorrhagic stroke', 'Limb ischemia', 'Pulmonary embolism'] },
-    { id: 15, text: 'Before insertion of IABP, what should the nurse check first', options: ['Patient\'s diet chart', 'Peripheral pulses', 'Patient\'s urine output', 'Presence of infection'] },
-    { id: 16, text: 'During IABP therapy, which is the most important hourly nursing assessment', options: ['Blood sugar level', 'Peripheral circulation', 'Respiratory rate', 'Weight monitoring'] },
-    { id: 17, text: 'The minimum urine output that should be maintained in a patient with IABP is', options: ['10 ml/hr', '20 ml/hr', '30 ml/hr', '40 ml/hr'] },
-    { id: 18, text: 'After removal of IABP catheter, what should the nurse do?', options: ['Start IV fluids immediately', 'Check pedal pulses', 'Begin chest physiotherapy', 'Insert urinary catheter'] },
-    { id: 19, text: 'Identify IABP Machine from the Images below:', options: ['Option A', 'Option B', 'Option C', 'Option D'], hasImages: true },
-    { id: 20, text: 'Which artery is most commonly used for IABP insertion and why is it preferred?', options: ['Femoral artery - largest diameter and easiest access', 'Radial artery - less risk of complications', 'Brachial artery - closer to heart', 'Carotid artery - direct access to aorta'] },
+    { id: 8, text: 'What type of monitoring is essential during IABP therapy', options: ['ECG and central venous pressure', 'Arterial pressure waveform and ECG', 'Pulse oximetry and temperature', 'Urine output and respiratory rate'] },
+    { id: 9, text: 'How many sub-modes of IABP are commonly used in clinical practice?', options: ['One', 'Two', 'Three', 'Four'] },
+    { id: 10, text: 'When does the IABP balloon inflate during the cardiac cycle?', options: ['During systole', 'At the beginning of ventricular contraction', 'Immediately after the R-wave', 'At the onset of diastole'] },
+    { id: 11, text: 'In an IABP waveform, diastolic augmentation appears after the R wave on ECG. What is the likely cause?', options: ['Early balloon deflation', 'Late balloon inflation', 'Proper synchronization', 'Catheter kinking'] },
+    { id: 12, text: 'What is the main purpose of using the IABP machine', options: ['To increase cardiac output and coronary perfusion', 'To measure arterial pressure only', 'To replace the funciton of the heart', 'To monitor pulmonary artery pressure'] },
+    { id: 13, text: 'Which of the following is a contraindication for the use of an intra-aortic balloon pump (IABP)?', options: ['Cardiogenic shock', 'Acute myocardial infarction', 'Cardiac tamponade', 'Aortic dissection'] },
+    { id: 14, text: 'What is the most common indication of IABP machine:', options: ['Early Balloon Deflation', 'Cardiogenic shock', 'Proper synchronization', 'Catheter Kinking'] },
+    { id: 15, text: 'Which of the following is a potential complication of IABP therapy?', options: ['Hyperkalemia', 'Hemorrhagic stroke', 'Limb ischemia', 'Pulmonary embolism'] },
+    { id: 16, text: 'Before insertion of IABP, what should the nurse check first', options: ['Patient\'s diet chart', 'Peripheral pulses', 'Patient\'s urine output', 'Presence of infection'] },
+    { id: 17, text: 'During IABP therapy, which is the most important hourly nursing assessment', options: ['Blood sugar level', 'Peripheral circulation', 'Respiratory rate', 'Weight monitoring'] },
+    { id: 18, text: 'The minimum urine output that should be maintained in a patient with IABP is', options: ['10 ml/hr', '20 ml/hr', '30 ml/hr', '40 ml/hr'] },
+    { id: 19, text: 'After removal of IABP catheter, what should the nurse do?', options: ['Start IV fluids immediately', 'Check pedal pulses', 'Begin chest physiotherapy', 'Insert urinary catheter'] },
+    { id: 20, text: 'Identify IABP Machine from the Images below:', options: ['Option A', 'Option B', 'Option C', 'Option D'], hasImages: true },
   ]
 
   useEffect(() => {
@@ -151,8 +151,8 @@ const Posttest = () => {
                   {q.id}. {q.text}
                 </legend>
                 
-                {/* Display images for question 19 */}
-                {q.hasImages && q.id === 19 && (
+                {/* Display images for question 20 */}
+                {q.hasImages && q.id === 20 && (
                   <div className="mb-4 xs:mb-6">
                     <div className="grid grid-cols-2 gap-3 xs:gap-4">
                       <div className="flex flex-col items-center">

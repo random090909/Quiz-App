@@ -91,25 +91,25 @@ const savePretest = async(req, res) => {
         // Answer key for pretest (by questionId: correct option string)
         const pretestKey = {
             1: 'Intra-Aortic Balloon Pump',
-            2: 'To increase cardiac output and coronary perfusion',
+            2: 'To provide temporary mechanical support in cardiogenic shock',
             3: 'Polyurethane',
             4: 'Two',
             5: 'In the descending thoracic aorta, below the left subclavian artery',
             6: 'Helium',
             7: 'Femoral artery',
-            8: 'Two',
-            9: 'At the beginning of ventricular contraction',
-            10: 'Catheter kinking',
-            11: 'To replace PCI completely',
-            12: 'Cardiogenic shock',
-            13: 'Catheter Kinking',
-            14: 'Hemorrhagic stroke',
-            15: 'Patient\'s urine output',
-            16: 'Peripheral circulation',
-            17: '20 ml/hr',
-            18: 'Begin chest physiotherapy',
-            19: 'Option A',
-            20: 'Femoral artery - largest diameter and easiest access'
+            8:'Arterial pressure waveform and ECG',
+            9: 'Two',
+            10: 'At the onset of diastole',
+            11: 'Late balloon inflation',
+            12: 'To increase cardiac output and coronary perfusion',
+            13: 'Aortic dissection',
+            14: 'Cardiogenic shock',
+            15: 'Limb ischemia',
+            16: 'Peripheral pulses',
+            17: 'Peripheral circulation',
+            18: '30 ml/hr',
+            19: 'Check pedal pulses',
+            20: 'Option A'
         }
 
         const pretestScore = answersArray.reduce((score, { questionId, answer }) => {
@@ -211,26 +211,27 @@ const savePosttest = async(req, res) => {
         // Answer key for posttest (same as pretest)
         const posttestKey = {
             1: 'Intra-Aortic Balloon Pump',
-            2: 'To increase cardiac output and coronary perfusion',
+            2: 'To provide temporary mechanical support in cardiogenic shock',
             3: 'Polyurethane',
             4: 'Two',
             5: 'In the descending thoracic aorta, below the left subclavian artery',
             6: 'Helium',
             7: 'Femoral artery',
-            8: 'Two',
-            9: 'At the beginning of ventricular contraction',
-            10: 'Catheter kinking',
-            11: 'To replace PCI completely',
-            12: 'Cardiogenic shock',
-            13: 'Catheter Kinking',
-            14: 'Hemorrhagic stroke',
-            15: 'Patient\'s urine output',
-            16: 'Peripheral circulation',
-            17: '20 ml/hr',
-            18: 'Begin chest physiotherapy',
-            19: 'Option B',
-            20: 'Femoral artery - largest diameter and easiest access'
+            8:'Arterial pressure waveform and ECG',
+            9: 'Two',
+            10: 'At the onset of diastole',
+            11: 'Late balloon inflation',
+            12: 'To increase cardiac output and coronary perfusion',
+            13: 'Aortic dissection',
+            14: 'Cardiogenic shock',
+            15: 'Limb ischemia',
+            16: 'Peripheral pulses',
+            17: 'Peripheral circulation',
+            18: '30 ml/hr',
+            19: 'Check pedal pulses',
+            20: 'Option A'
         }
+
 
         const posttestScore = answersArray.reduce((score, { questionId, answer }) => {
             return score + (posttestKey[questionId] === answer ? 1 : 0)
